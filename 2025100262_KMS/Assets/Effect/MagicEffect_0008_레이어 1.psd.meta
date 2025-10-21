@@ -1,0 +1,594 @@
+fileFormatVersion: 2
+guid: 4678b955051b4e84a9afbccca06d5490
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7132463723246912296
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_0"
+  - first:
+      213: -7435428648267386972
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_1"
+  - first:
+      213: 3046508118725197614
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_2"
+  - first:
+      213: -9138153923386253225
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_3"
+  - first:
+      213: -3501236272968202325
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_4"
+  - first:
+      213: -2080947609493179251
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_5"
+  - first:
+      213: 3949008536958849783
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_6"
+  - first:
+      213: 1640878388883164499
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_7"
+  - first:
+      213: -980740855272545469
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_8"
+  - first:
+      213: 847134968649980485
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_9"
+  - first:
+      213: -5041261826618345161
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_10"
+  - first:
+      213: 5922415279066290918
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_11"
+  - first:
+      213: -4698704629563269271
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_12"
+  - first:
+      213: -3258173082909264079
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_13"
+  - first:
+      213: 8757163776701736529
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_14"
+  - first:
+      213: 1388143084522521777
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_15"
+  - first:
+      213: -5288604015498958877
+    second: "MagicEffect_0008_\uB808\uC774\uC5B4 1_16"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_0"
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 498
+        width: 112
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dcf18a7806640d90800000000000000
+      internalID: -7132463723246912296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_1"
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 482
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4af624bf90d00d890800000000000000
+      internalID: -7435428648267386972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_2"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 457
+        width: 145
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2f75fd2efe574a20800000000000000
+      internalID: 3046508118725197614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_3"
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 482
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75068b53c61ce2180800000000000000
+      internalID: -9138153923386253225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_4"
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 314
+        width: 76
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba7840bf82c196fc0800000000000000
+      internalID: -3501236272968202325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_5"
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 388
+        width: 40
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d84f5fbac2dfe13e0800000000000000
+      internalID: -2080947609493179251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_6"
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 155
+        width: 144
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f2da647752bdc630800000000000000
+      internalID: 3949008536958849783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_7"
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 235
+        width: 107
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35d0ff0733295c610800000000000000
+      internalID: 1640878388883164499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_8"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 232
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34364c86365b362f0800000000000000
+      internalID: -980740855272545469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_9"
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 83
+        width: 70
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54a913304c0a1cb00800000000000000
+      internalID: 847134968649980485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_10"
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 131
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7393da41417d90ab0800000000000000
+      internalID: -5041261826618345161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_11"
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 98
+        width: 62
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ea97196155a03250800000000000000
+      internalID: 5922415279066290918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_12"
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 90
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96fd562c809daceb0800000000000000
+      internalID: -4698704629563269271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_13"
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 10
+        width: 63
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1373478f7d4a8c2d0800000000000000
+      internalID: -3258173082909264079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_14"
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 56
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 156a936be02b78970800000000000000
+      internalID: 8757163776701736529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_15"
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 19
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b4416ad7cca34310800000000000000
+      internalID: 1388143084522521777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MagicEffect_0008_\uB808\uC774\uC5B4 1_16"
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 23
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e7ea7a0baa1b96b0800000000000000
+      internalID: -5288604015498958877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
