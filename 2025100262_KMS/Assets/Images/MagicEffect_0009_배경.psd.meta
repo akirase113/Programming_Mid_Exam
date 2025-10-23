@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "MagicEffect_0009_\uBC30\uACBD_0": -6999799912905419829
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

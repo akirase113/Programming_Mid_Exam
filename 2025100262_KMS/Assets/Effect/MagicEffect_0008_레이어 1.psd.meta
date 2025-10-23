@@ -586,7 +586,24 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_0": -7132463723246912296
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_1": -7435428648267386972
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_10": -5041261826618345161
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_11": 5922415279066290918
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_12": -4698704629563269271
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_13": -3258173082909264079
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_14": 8757163776701736529
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_15": 1388143084522521777
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_16": -5288604015498958877
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_2": 3046508118725197614
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_3": -9138153923386253225
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_4": -3501236272968202325
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_5": -2080947609493179251
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_6": 3949008536958849783
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_7": 1640878388883164499
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_8": -980740855272545469
+      "MagicEffect_0008_\uB808\uC774\uC5B4 1_9": 847134968649980485
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

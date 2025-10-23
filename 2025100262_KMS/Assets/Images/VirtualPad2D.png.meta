@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      VirtualPad2D_0: 6640081967022928377
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
