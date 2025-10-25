@@ -2,38 +2,52 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    [Header("이펙트 프리팹 설정")]
+    // 1. Inspector에서 MagicEffect 프리팹을 연결
     public GameObject magicEffectPrefab;
-    // Inspector에서 설정할 변수: 마법이 생성될 Y축 오프셋 (얼마나 위에서 시작할지)
+
+    [Header("이펙트 움직임 설정")]
+    // 2. 마법이 생성될 높이
     [Tooltip("마법 이펙트가 적의 발밑보다 얼마나 높은 곳에서 생성될지")]
-    public float magicSpawnHeightOffset = 3f; 
-    // Inspector에서 설정할 변수: 마법이 땅에 꽂히는 속도
+    public float magicSpawnHeightOffset = 3f;
+
+    // 3. 마법이 떨어지는 속도
     [Tooltip("마법 이펙트가 발밑으로 내려오는 속도")]
-    public float magicFallSpeed = 10f; 
+    public float magicFallSpeed = 10f;
 
-    // ... (Update, AttackCheck 함수는 그대로 둡니다) ...
+    // ---------------------------------------------------------------
+    // Update() 함수와 AttackCheck() 함수는 
+    // EnemyClickable.cs 방식에서는 필요 없으므로 삭제되었습니다.
+    // ---------------------------------------------------------------
 
-    void PerformAttack(Collider2D enemyCollider)
+
+    /// <summary>
+    /// EnemyClickable.cs 스크립트에 의해 'public'으로 호출되는 함수
+    /// </summary>
+    /// <param name="enemyCollider">클릭된 적의 콜라이더</param>
+    public void PerformAttack(Collider2D enemyCollider)
     {
+        // 1. 적의 Transform 정보 가져오기
         Transform enemyTransform = enemyCollider.transform;
 
-        // 1. "적의 발밑" 위치 계산 (이건 동일)
+        // 2. "적의 발밑" 위치 계산
         float footOffsetY = enemyCollider.bounds.size.y / 2f;
         Vector2 targetFootPosition = new Vector2(enemyTransform.position.x, enemyTransform.position.y - footOffsetY);
 
-        // 2. "적의 발밑 상공" 위치 계산 (새로운 시작 위치)
-        // targetFootPosition.y에서 magicSpawnHeightOffset만큼 위로 올립니다.
+        // 3. "적의 발밑 상공" (마법 생성 위치) 계산
         Vector2 startSpawnPosition = new Vector2(targetFootPosition.x, targetFootPosition.y + magicSpawnHeightOffset);
 
-        // 3. '마법 이펙트 프리팹'을 '적의 발밑 상공' 위치에 생성
+        // 4. 마법 이펙트 프리팹 생성
         if (magicEffectPrefab != null)
         {
+            // startSpawnPosition 위치에 magicEffectPrefab을 생성
             GameObject instantiatedMagic = Instantiate(magicEffectPrefab, startSpawnPosition, Quaternion.identity);
-            
-            // 4. 생성된 마법 이펙트에게 목표 위치와 속도를 알려주는 스크립트 추가
-            //    이펙트 프리팹에 MagcEffectMover.cs를 붙여야 합니다!
+
+            // 생성된 이펙트에 붙어있는 MagicEffectMover 스크립트를 찾음
             MagicEffectMover mover = instantiatedMagic.GetComponent<MagicEffectMover>();
-            if(mover != null)
+            if (mover != null)
             {
+                // 이펙트가 떨어질 목표 위치와 속도를 설정해 줌
                 mover.SetTarget(targetFootPosition, magicFallSpeed);
             }
             else
@@ -46,10 +60,11 @@ public class PlayerAttack : MonoBehaviour
             Debug.LogError("Magic Effect Prefab이 할당되지 않았습니다!");
         }
 
-        // 5. 적에게 데미지 입히는 것은 동일
+        // 5. 적에게 데미지 주기 (Enemy.cs 스크립트 찾기)
         Enemy enemyScript = enemyCollider.GetComponent<Enemy>();
         if (enemyScript != null)
         {
+            // Enemy.cs의 TakeDamage() 함수 호출
             enemyScript.TakeDamage();
         }
     }
