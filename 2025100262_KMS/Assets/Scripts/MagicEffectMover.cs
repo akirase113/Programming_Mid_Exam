@@ -3,7 +3,7 @@ using UnityEngine;
 public class MagicEffectMover : MonoBehaviour
 {
     private Vector2 targetPosition; // 마법이 도달할 최종 위치 (적의 발밑)
-    private float fallSpeed;        // 마법이 떨어지는 속도
+    public float fallSpeed;        // 마법이 떨어지는 속도
     private bool isMoving = false;  // 현재 움직이는 중인지?
 
     // PlayerAttack.cs에서 이 함수를 호출하여 목표 위치와 속도를 설정합니다.

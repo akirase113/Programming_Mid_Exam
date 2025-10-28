@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3312420119307158390}
   - component: {fileID: 6024647350553921907}
+  - component: {fileID: 197055095641359071}
   m_Layer: 0
   m_Name: "MagicEffect_0000_\uB808\uC774\uC5B4 2_0"
   m_TagString: Untagged
@@ -46,6 +47,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationDuration: 1
+--- !u!114 &197055095641359071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518150458295199466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad5bcbb936008b47affd33d399296d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallSpeed: 2
 --- !u!1 &7689322104328617009
 GameObject:
   m_ObjectHideFlags: 0
