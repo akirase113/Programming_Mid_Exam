@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement; // 씬 관리를 위해 필수
+using System.Collections; // 코루틴(시간 지연)을 위해 필수
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private float moveInput;         // 좌우 입력 값
     private bool isGrounded;         // 땅에 닿았는지 여부
     private bool isFacingRight = true; // 현재 오른쪽을 보는지 여부
+    private bool isDead = false;     // 현재 사망 또는 클리어 상태인지 확인
 
     // 게임 시작 시 1회 호출
     void Start()
@@ -35,27 +38,24 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // 1. 지면 감지
-        // groundCheck의 위치에서 groundCheckRadius 반경의 원을 그려
-        // groundLayer와 겹치는지 확인
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        // 2. 좌우 입력 받기 (A, D, <-, -> 키)
-        moveInput = Input.GetAxis("Horizontal"); // -1 (왼쪽) ~ +1 (오른쪽)
+        // 2. 좌우 입력 받기
+        moveInput = Input.GetAxis("Horizontal");
 
         // 3. 점프 입력 (스페이스바)
-        // 만약 'Jump' 버튼을 눌렀고 (GetButtonDown) 땅에 닿아있다면 (isGrounded)
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            // y축 속도를 0으로 초기화 (더블 점프 방지 및 일관된 점프 높이)
+            // y축 속도 초기화 (일관된 점프 높이)
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
             
-            // y축(위쪽)으로 점프 힘(jumpForce)을 순간적으로 가함 (Impulse)
+            // y축(위쪽)으로 점프 힘(Impulse)을 가함
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
         // 4. 애니메이터 파라미터 업데이트
-        animator.SetBool("isMoving", moveInput != 0); // moveInput이 0이 아니면 isMoving = true
-        animator.SetBool("isJumping", !isGrounded); // 땅에 닿지 않았다면 isJumping = true
+        animator.SetBool("isMoving", moveInput != 0);
+        animator.SetBool("isJumping", !isGrounded);
 
         // 5. 캐릭터 좌우 반전
         Flip();
@@ -64,41 +64,85 @@ public class PlayerController : MonoBehaviour
     // 고정된 시간마다 호출 (물리 처리)
     void FixedUpdate()
     {
-        // Rigidbody의 속도(velocity)를 제어하여 좌우 이동 구현
-        // y축 속도(rb.velocity.y)는 점프나 중력을 위해 그대로 유지해야 함
+        // Rigidbody의 속도(velocity)를 제어하여 좌우 이동
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
     }
 
     // 캐릭터 좌우 반전 함수
     void Flip()
     {
-        // 왼쪽으로 가려는데 오른쪽을 보고 있거나 (moveInput < 0 && isFacingRight)
-        // 오른쪽으로 가려는데 왼쪽을 보고 있다면 (!isFacingRight && moveInput > 0)
         if ((isFacingRight && moveInput < 0) || (!isFacingRight && moveInput > 0))
         {
-            isFacingRight = !isFacingRight; // 보는 방향 플래그 뒤집기
-
-            // 오브젝트의 스케일(Scale)의 x 값을 -1 곱하여 좌우를 뒤집음
+            isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
         }
     }
 
-    // [외부 호출용] 사망 함수 (Obstacle.cs 등에서 호출)
+    // [외부 호출용] 사망 함수
     public void Die()
     {
+        // 1. 이미 죽었거나 클리어했다면 중복 실행 방지
+        if (isDead) return;
+
+        // 2. 사망 상태로 변경
+        isDead = true; 
+
+        // 3. 사망 애니메이션 재생
         animator.SetTrigger("Die");
+
+        // 4. 물리 효과 및 조작 정지
         rb.linearVelocity = Vector2.zero;
-        rb.isKinematic = true; // 물리 효과 정지
-        this.enabled = false; // 이 스크립트의 Update/FixedUpdate 정지
+        rb.isKinematic = true; // 중력 및 물리 효과 완전 정지
+        this.enabled = false; // PlayerController 스크립트(Update 등) 정지
+
+        // 5. 2초 뒤에 씬을 재시작하는 코루틴 실행
+        StartCoroutine(RestartSceneAfterDelay(2.0f));
     }
 
-    // [외부 호출용] 클리어 함수 (Goal.cs 등에서 호출)
+    // [추가된 함수] Goal.cs가 호출할 클리어 함수
     public void Clear()
     {
+        // 1. 이미 죽었거나 클리어했다면 중복 실행 방지
+        if (isDead) return;
+
+        // 2. 클리어 상태로 변경
+        isDead = true; 
+
+        // 3. 클리어 애니메이션 재생
+        // (Animator에 "Clear" Trigger 파라미터가 있어야 합니다)
         animator.SetTrigger("Clear");
+
+        // 4. 물리 효과 및 조작 정지
         rb.linearVelocity = Vector2.zero;
-        this.enabled = false;
+        rb.isKinematic = true;
+        this.enabled = false; // PlayerController 스크립트 정지
     }
-}
+
+
+    // [추가된 함수] 충돌 감지 함수
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 1. 충돌한 상대방의 태그가 "Enemy" 또는 "Hazard"인지 확인
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Hazard"))
+        {
+            Debug.Log(collision.gameObject.name + "과(와) 충돌! 사망합니다.");
+            Die(); // Die() 함수 호출
+        }
+    }
+
+    // [추가된 함수] 2초 뒤에 씬을 재시작하는 코루틴
+    private IEnumerator RestartSceneAfterDelay(float delay)
+    {
+        // 1. 'delay' 시간(초)만큼 기다림
+        yield return new WaitForSeconds(delay);
+
+        // 2. 현재 활성화된 씬의 이름을 가져옴 (예: "Stage1")
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        
+        // 3. 현재 씬을 다시 로드(Load)하여 처음부터 시작
+        SceneManager.LoadScene(currentSceneName);
+    }
+
+} // <--- 클래스(PlayerController)의 마지막 괄호
