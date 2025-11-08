@@ -129,7 +129,7 @@ AnimatorStateMachine:
     m_Position: {x: 305, y: 195, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9124486533192475385}
-    m_Position: {x: 551.9971, y: 83.8766, z: 0}
+    m_Position: {x: 550, y: 80, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -5479255577673576615}
@@ -346,7 +346,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Jump
+  m_Name: Player_Jump
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -360,7 +360,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: 2c6bb50ad1e9bd34284ad16bd1043178, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

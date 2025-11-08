@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// Rigidbody 2D가 필수 컴포넌트임을 명시
 [RequireComponent(typeof(Rigidbody2D))]
 public class Enemy : MonoBehaviour
 {
@@ -20,73 +19,60 @@ public class Enemy : MonoBehaviour
     // 게임 시작 시 1회 호출
     void Start()
     {
-        // Rigidbody 2D 컴포넌트 가져오기
         rb = GetComponent<Rigidbody2D>();
-
-        // 몬스터의 시작 위치(순찰의 중심점) 저장
         startPosition = transform.position;
-
-        // 회전 방지 (1단계에서 설정했지만, 코드로도 확인)
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
-    // 매 프레임마다 호출 (방향 전환 로직)
+    // [이동 로직] 매 프레임마다 호출 (방향 전환 로직)
     void Update()
     {
-        // 몬스터가 죽었다면 Update 로직을 실행하지 않음
-        if (!isAlive) return;
+        if (!isAlive) return; // 죽었으면 움직이지 않음
 
         // 방향 전환 로직
         if (isMovingRight)
         {
-            // 만약 오른쪽 한계점(startPosition + patrolDistance)을 넘었다면
             if (transform.position.x >= startPosition.x + patrolDistance)
             {
-                isMovingRight = false; // 왼쪽으로 전환
+                isMovingRight = false;
                 Flip();
             }
         }
         else // 왼쪽으로 움직일 때
         {
-            // 만약 왼쪽 한계점(startPosition - patrolDistance)을 넘었다면
             if (transform.position.x <= startPosition.x - patrolDistance)
             {
-                isMovingRight = true; // 오른쪽으로 전환
+                isMovingRight = true;
                 Flip();
             }
         }
     }
 
-    // 고정된 프레임마다 호출 (물리 이동 로직)
+    // [이동 로직] 고정된 프레임마다 호출 (물리 이동 로직)
     void FixedUpdate()
     {
-        // 몬스터가 죽었다면 움직임을 멈춤
         if (!isAlive)
         {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // 수평 속도만 0으로
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
             return;
         }
 
-        // 현재 방향에 맞춰 속도(velocity) 설정
         float moveDirection = isMovingRight ? 1f : -1f;
         rb.linearVelocity = new Vector2(moveDirection * moveSpeed, rb.linearVelocity.y);
     }
 
-    // 캐릭터 좌우 반전 함수
+    // [이동 로직] 캐릭터 좌우 반전 함수
     void Flip()
     {
         Vector3 localScale = transform.localScale;
-        localScale.x *= -1f; // x 스케일 값을 반전 (1 <-> -1)
+        localScale.x *= -1f;
         transform.localScale = localScale;
     }
-
-
-    // --- 4단계에서 만든 기존 함수들 ---
 
     // 데미지를 받는 함수 (PlayerAttack.cs가 호출)
     public void TakeDamage()
     {
-        if (!isAlive) return; // 이미 죽었다면 데미지 안 받음
+        if (!isAlive) return;
 
         health--;
 
@@ -96,32 +82,30 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    // 죽는 함수
+    // 죽는 함수 (GameUIManager에 보고하는 기능 포함)
     private void Die()
     {
-        isAlive = false; // 살아있지 않음으로 표시 (Update, FixedUpdate가 멈춤)
+        if (!isAlive) return;
+
+        isAlive = false;
         Debug.Log("적이 처치되었습니다!");
 
-        // 콜라이더를 비활성화 (클릭 방지)
-        GetComponent<Collider2D>().enabled = false;
+        // 1. [수정됨] GameUIManager에 보고
+        if (GameUIManager.instance != null)
+        {
+            GameUIManager.instance.EnemyDefeated();
+        }
 
-        // (선택) EnemyClickable 스크립트도 비활성화
+        // 2. 콜라이더 및 물리 정지
+        GetComponent<Collider2D>().enabled = false;
         if (GetComponent<EnemyClickable>() != null)
         {
             GetComponent<EnemyClickable>().enabled = false;
         }
-
-        // 물리 효과 완전 정지
         rb.linearVelocity = Vector2.zero;
-        rb.isKinematic = true; // 중력을 포함한 모든 물리 효과를 끔
+        rb.isKinematic = true;
 
-        // (선택) 여기에 사망 애니메이션 트리거를 추가
-        // animator.SetTrigger("Die");
-
-        // (선택) 1초 뒤에 파괴 (애니메이션 시간 기다리기)
-        // Destroy(gameObject, 1f);
-
-        // 즉시 파괴
+        // 3. 오브젝트 파괴
         Destroy(gameObject);
     }
 }
